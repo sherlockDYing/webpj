@@ -15,12 +15,8 @@
 
     <link rel="stylesheet" href="css/animate.min.css">
     <style>
-        body{
-            margin-top: 65px;
-        }
         .left-nav{
             background-color: #ccc;
-            /*?*/
             height: 600px;
         }
         #left-content{
@@ -39,51 +35,6 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-    <!--container-fluid表示自适应大小，container表示居中-->
-    <div class="container">
-        <!--定义顶部导航栏-->
-        <div class="navbar-header">
-            <!--button是当屏幕小于多少时出现的可以打开导航列表的按钮-->
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#demo-navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">某管理系统</a>
-        </div>
-<!--导航栏使用的是模板 未改动-->
-
-        <!--collapse用于导航栏折叠之后数据在button按钮里点击显示-->
-        <div class="collapse navbar-collapse" id="demo-navbar">
-            <!--nav navbar-nav表示显示在导航栏里-->
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">功能<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <!--通过dropdown-header来标记一组动作-->
-                        <li class="dropdown-header">信息</li>
-                        <li><a href="#">信息建立</a></li>
-                        <li><a href="#">信息查询</a></li>
-                        <li><a href="#">信息管理</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#" data-toggle="modal" data-target="#about">帮助</a></li>
-
-                <!--input必须得实现form-control才有样式效果-->
-                <li><a><input type="text" placeholder="用户名" class="form-control"/></a></li>
-                <li><a><input type="text" placeholder="密码" class="form-control"/></a></li>
-                <!--btn btn-default表示默认样式-->
-                <li><a><button type="button" class="btn btn-default">登陆</button></a></li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <div class="container-fluid">
     <div class="row">
@@ -96,6 +47,7 @@
                     <a  class="list-group-item" id="nav-pInfo">个人信息</a >
                     <a  class="list-group-item" id="nav-myComment">我的评论</a>
                     <a  class="list-group-item" id="nav-myCollection">我的收藏</a>
+<!--                    展示个人收藏的他人的评论，或者雕塑缩略图-->
                 </div>
                 <div class="list-group">
                     <a class="list-group-item" id="nav-set">设置</a>
@@ -113,7 +65,7 @@
 
 
 
-                <!-- 1 -->
+                <!-- 个人信息 -->
             <section class="about-section wow fadeInRight">
 <div class="container">
     <h2 class="h1 about-h ">个人信息</h2>
@@ -133,7 +85,7 @@
         </div>
     </div>
 </section>
-                <!-- 2 -->
+                <!-- 评论 -->
             <section class="comment-section wow fadeInRight">
                 <div class="container">
                     <h2 class="h1">我的评论</h2>
@@ -188,7 +140,7 @@
                     </div>
                 </div>
             </section>
-                <!-- 3 -->
+                <!-- 设置-->
             <section class="set-section wow fadeInRight">
                 <h2 class="h1">设置</h2>
                 <form class="form-horizontal text-left">
@@ -240,9 +192,71 @@
                 </form>
             </section>
 
+                <!-- 收藏 -->
+            <section class = 'collect-section wow fadeInRight'>
+                <div class="container">
+                <h2 class="h1">收藏</h2>
+                    <div class="row">
+                        <div class="col-md-6" >
+                            <h2 class="h3">精彩评论</h2>
+                            <table class="table table-over " id="accordion-collect">
+                                <thead><tr>
+                                    <th>时间</th>
+                                    <th>对象</th>
+                                    <th>创建者</th>
+                                    <th>概要</th>
+                                </tr></thead>
+                                <tr class="bg-info">
+                                    <th class="comment-time">2019-05-05 21:23</th>
+                                    <th class="comment-obj">某雕塑</th>
+                                    <th class="comment-who">西西</th>
+                                    <th class="comment-abstract">
+                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-0">
+                                            Nihil anim keffiyeh helvetica<span>...</span>
+                                        </a></th>
 
+                                </tr>
+                                <tr class="bg-warning panel-collapse collapse" id="collect-comment-0">
+                                    <td colspan="4"><div>
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                        vice lomo.
+                                    </div>
+                                    </td>
+                                </tr>
 
-                <!-- 4 -->
+                                <tr class="bg-info">
+                                    <th class="comment-time">2019-05-05 21:23</th>
+                                    <th class="comment-obj">某雕塑</th>
+                                    <th class="comment-who">南南</th>
+                                    <th class="comment-abstract">
+                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-1">
+                                            Nihil anim keffiyeh helvetica<span>...</span>
+                                        </a></th>
+
+                                </tr>
+                                <tr class="bg-warning panel-collapse collapse" id="collect-comment-1">
+                                    <td colspan="4"><div>
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                        vice lomo.
+                                    </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+                <!-- 帮助-->
+            <section class = "help-section wow fadeInRight">
+                <div class="container">
+                <h2 class="h1">帮助</h2>
+                </div>
+            </section>
 
 
 
@@ -256,24 +270,45 @@
 <script>
     $('.comment-section').hide();
     $('.set-section').hide();
+    $('.collect-section').hide();
+    $('.help-section').hide();
     new WOW().init();
 
-    var zero = $("#nav-pInfo"),one = $("#nav-myComment"),two = $("#nav-myCollection"),three = $('#nav-set');
+    var zero = $("#nav-pInfo"),one = $("#nav-myComment"),two = $("#nav-myCollection"),three = $('#nav-set'),four = $('#nav-help');
     zero.on('click',function () {
         $(".about-section").fadeIn();
         $(".comment-section").fadeOut();
         $(".set-section").fadeOut();
+        $(".help-section").fadeOut();
+        $(".collect-section").fadeOut();
     });
     one.on('click',function () {
         $(".about-section").fadeOut();
         $(".comment-section").fadeIn();
         $(".set-section").fadeOut();
+        $(".help-section").fadeOut();
+        $(".collect-section").fadeOut();
     });
-
+    two.on('click',function () {
+        $(".about-section").fadeOut();
+        $(".comment-section").fadeOut();
+        $(".set-section").fadeOut();
+        $(".help-section").fadeOut();
+        $(".collect-section").fadeIn();
+    });
     three.on('click',function () {
         $(".about-section").fadeOut();
         $(".comment-section").fadeOut();
         $(".set-section").fadeIn();
+        $(".help-section").fadeOut();
+    });
+
+    four.on('click',function () {
+        $(".about-section").fadeOut();
+        $(".comment-section").fadeOut();
+        $(".set-section").fadeOut();
+        $(".collect-section").fadeOut();
+        $(".help-section").fadeIn();
     })
 </script>
 </body>
