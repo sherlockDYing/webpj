@@ -17,7 +17,7 @@
     <style>
         .left-nav{
             background-color: #ccc;
-            height: 600px;
+            height: 800px;
         }
         #left-content{
             margin-top: 20px;
@@ -29,6 +29,20 @@
         #btngroup button{
             width: 100%;
         }
+
+        table{
+            table-layout:fixed;
+            width: 900px;
+            word-wrap:break-word;
+        /*    超长数字单词换行*/
+        }
+        /*溢出显示省略号*/
+        .comment-abstract{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+
 
 
     </style>
@@ -66,19 +80,24 @@
 
 
                 <!-- 个人信息 -->
-            <section class="about-section wow fadeInRight">
+            <section class="about-section wow fadeInUp">
 <div class="container">
     <h2 class="h1 about-h ">个人信息</h2>
         <div class="row">
         <div class="col-md-6 " >
             <h3 class="h1 username">东东</h3>
 
-                <div class="list-group">
-                    <div class="list-group-item"><p><strong>性别</strong><span class="gender pull-right">男</span></p></div>
-                    <div class="list-group-item"><p><strong>所在地</strong><span class="location pull-right">上海市杨浦区</span></p></div>
-                    <div class="list-group-item"><p><strong>工作单位/学校</strong><span class="org pull-right">复旦大学</span></p></div>
-                    <div class="list-group-item"><p><strong>个人简介</strong><span class="intro pull-right">hello</span></p></div>
-                </div>
+            <table class="table" >
+               <tr><td><strong>性别</strong></td><td>男</td></tr>
+                <tr><td><strong>所在地</strong></td><td>上海市杨浦区</td></tr>
+                <tr><td><strong>工作单位/学校</strong></td><td>复旦大学</td></tr>
+                <tr><td><strong>个人简介</strong></td>
+                    <td>
+                        <div> QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ vice lomo.</div>
+                    </td>
+                </tr>
+            </table>
+
 
             </div>
 
@@ -86,7 +105,7 @@
     </div>
 </section>
                 <!-- 评论 -->
-            <section class="comment-section wow fadeInRight">
+            <section class="comment-section wow fadeInUp">
                 <div class="container">
                     <h2 class="h1">我的评论</h2>
                     <div class="row">
@@ -102,7 +121,9 @@
                                                 <th class="comment-obj">某雕塑</th>
                                                 <th class="comment-abstract">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#comment-0">
-                                                        Nihil anim keffiyeh helvetica<span>...</span>
+                                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                                        vice lomo.
                                                     </a></th>
 
                                 </tr>
@@ -120,16 +141,16 @@
                                     <th class="comment-obj">某雕塑</th>
                                     <th class="comment-abstract">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#comment-1">
-                                            Nihil anim keffiyeh helvetica<span>...</span>
+                                            NihiEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEl anim keffiyeh helvetica, craft beer labore wes anderson
+                                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo.
                                         </a></th>
 
                                 </tr>
                                 <tr class="bg-warning panel-collapse collapse" id="comment-1">
-                                    <td colspan="3"><div>
-                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                        vice lomo.
-                                    </div>
+                                    <td colspan="3">
+                                        233333333333333333333333333333333333333333, 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.Ad vegan excepteur butcher vice lomo.
+
                                     </td>
                                 </tr>
 
@@ -141,7 +162,7 @@
                 </div>
             </section>
                 <!-- 设置-->
-            <section class="set-section wow fadeInRight">
+            <section class="set-section wow fadeInUp">
                 <h2 class="h1">设置</h2>
                 <form class="form-horizontal text-left">
                     <div class="form-group">
@@ -193,13 +214,13 @@
             </section>
 
                 <!-- 收藏 -->
-            <section class = 'collect-section wow fadeInRight'>
+            <section class = 'collect-section wow fadeInUp'>
                 <div class="container">
                 <h2 class="h1">收藏</h2>
                     <div class="row">
                         <div class="col-md-6" >
                             <h2 class="h3">精彩评论</h2>
-                            <table class="table table-over " id="accordion-collect">
+                            <table class="table table-hover table-condensed table-striped" id="accordion-collect" >
                                 <thead><tr>
                                     <th>时间</th>
                                     <th>对象</th>
@@ -210,13 +231,15 @@
                                     <th class="comment-time">2019-05-05 21:23</th>
                                     <th class="comment-obj">某雕塑</th>
                                     <th class="comment-who">西西</th>
-                                    <th class="comment-abstract">
-                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-0">
-                                            Nihil anim keffiyeh helvetica<span>...</span>
+                                    <th class="comment-abstract"  style="overflow: hidden;text-overflow:ellipsis;white-space:nowrap" >
+                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-0" >
+                                            Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                                            vice lomo.
                                         </a></th>
 
                                 </tr>
-                                <tr class="bg-warning panel-collapse collapse" id="collect-comment-0">
+                                <tr class="bg-warning panel-collapse collapse"  id="collect-comment-0">
                                     <td colspan="4"><div>
                                         Nihil anim keffiyeh helvetica, craft beer labore wes anderson
                                         cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
@@ -230,16 +253,14 @@
                                     <th class="comment-obj">某雕塑</th>
                                     <th class="comment-who">南南</th>
                                     <th class="comment-abstract">
-                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-1">
-                                            Nihil anim keffiyeh helvetica<span>...</span>
+                                        <a data-toggle="collapse" data-parent="#accordion-collect" href="#collect-comment-1" style="overflow: hidden ;text-overflow:ellipsis">
+                                            Nihil anim keffiyeh helvetica
                                         </a></th>
 
                                 </tr>
                                 <tr class="bg-warning panel-collapse collapse" id="collect-comment-1">
                                     <td colspan="4"><div>
-                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                        vice lomo.
+                                        Nihil anim keffiyeh helvetica!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                                     </div>
                                     </td>
                                 </tr>
@@ -252,7 +273,7 @@
             </section>
 
                 <!-- 帮助-->
-            <section class = "help-section wow fadeInRight">
+            <section class = "help-section wow fadeInUp">
                 <div class="container">
                 <h2 class="h1">帮助</h2>
                 </div>
@@ -283,32 +304,33 @@
         $(".collect-section").fadeOut();
     });
     one.on('click',function () {
-        $(".about-section").fadeOut();
         $(".comment-section").fadeIn();
+        $(".about-section").fadeOut();
         $(".set-section").fadeOut();
         $(".help-section").fadeOut();
         $(".collect-section").fadeOut();
     });
     two.on('click',function () {
+        $(".collect-section").fadeIn();
         $(".about-section").fadeOut();
         $(".comment-section").fadeOut();
         $(".set-section").fadeOut();
         $(".help-section").fadeOut();
-        $(".collect-section").fadeIn();
     });
     three.on('click',function () {
+        $(".set-section").fadeIn();
         $(".about-section").fadeOut();
         $(".comment-section").fadeOut();
-        $(".set-section").fadeIn();
+        $(".collect-section").fadeOut();
         $(".help-section").fadeOut();
     });
 
     four.on('click',function () {
+        $(".help-section").fadeIn();
         $(".about-section").fadeOut();
         $(".comment-section").fadeOut();
         $(".set-section").fadeOut();
         $(".collect-section").fadeOut();
-        $(".help-section").fadeIn();
     })
 </script>
 </body>
